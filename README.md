@@ -20,3 +20,24 @@ This project utilizes the **[REST Countries API](https://restcountries.com/)**
 - **HTML:** For the structural foundation of the application.
 - **CSS:** For styling, grid/flexbox layouts, responsive design, and dynamic hover animations.
 - **JavaScript:** For DOM manipulation, event handling, routing, and asynchronous API calls.
+
+## Setup and Execution
+
+To run this project locally, follow these simple steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/AnjanaKamle/Global-Explorer.git
+   ```
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd Global-Explorer
+   ```
+
+3. **Run the application:**
+   - Simply open the `index.html` file in your preferred web browser.
+   - *Alternatively*, if you are using an editor like VS Code, you can right-click the `index.html` file and select **Open with Live Server** to launch a local development server that automatically refreshes on save.
+
+> **Note:** This project acts purely on the frontend and does not require complex build tools or Node.js package installations to run.
+
