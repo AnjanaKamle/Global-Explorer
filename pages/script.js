@@ -1,4 +1,4 @@
-// ELEMENTS
+// elements
 var container = document.getElementById("countriesContainer");
 var searchInput = document.getElementById("searchInput");
 var regionFilter = document.getElementById("regionFilter");
@@ -9,12 +9,12 @@ var toggleBtn = document.getElementById("themeToggle");
 
 var countriesData = [];
 
-/* THEME TOGGLE */
+/* theme toggle */
 toggleBtn.onclick = function () {
   document.body.classList.toggle("dark");
 };
 
-/* FETCH DATA */
+/* fetch data */
 function fetchCountries() {
   loading.style.display = "block";
   error.style.display = "none";
@@ -35,7 +35,7 @@ function fetchCountries() {
     });
 }
 
-/* DISPLAY COUNTRIES */
+/* countries display */
 function displayCountries(data) {
   container.innerHTML = "";
 
@@ -59,25 +59,25 @@ function displayCountries(data) {
       img.src = "https://flagcdn.com/w320/un.png";
     }
 
-    // NAME
+    // name
     var name = document.createElement("h3");
     name.innerText = country.name.common;
 
-    // CAPITAL
+    // capital
     var capital = document.createElement("p");
     capital.innerText =
       "Capital: " +
       (country.capital && country.capital[0] ? country.capital[0] : "N/A");
 
-    // REGION
+    // region
     var region = document.createElement("p");
     region.innerText = "Region: " + (country.region || "N/A");
 
-    // POPULATION
+    // population
     var pop = document.createElement("p");
     pop.innerText = "Population: " + (country.population || "N/A");
 
-    // APPEND
+    // append
     div.appendChild(img);
     div.appendChild(name);
     div.appendChild(capital);
@@ -88,7 +88,7 @@ function displayCountries(data) {
   }
 }
 
-/* FILTER + SEARCH + SORT */
+/* filter, search, sort */
 function applyFilters() {
   var filtered = countriesData;
 
@@ -104,7 +104,7 @@ function applyFilters() {
     return name.includes(text) || capital.includes(text);
   });
 
-  // REGION
+  // region
   var region = regionFilter.value;
   if (region !== "") {
     filtered = filtered.filter(function (c) {
@@ -112,7 +112,7 @@ function applyFilters() {
     });
   }
 
-  // SORT
+  // sorting
   if (sortOption.value === "name-asc") {
     filtered.sort(function (a, b) {
       return a.name.common.localeCompare(b.name.common);
@@ -140,10 +140,10 @@ function applyFilters() {
   displayCountries(filtered);
 }
 
-/* EVENTS */
+/* events */
 searchInput.oninput = applyFilters;
 regionFilter.onchange = applyFilters;
 sortOption.onchange = applyFilters;
 
-/* START */
+/* start */
 fetchCountries();
