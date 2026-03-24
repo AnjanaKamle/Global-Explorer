@@ -1,0 +1,154 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+  color: #333;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+#themeToggle {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  background: #555;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.controls input,
+.controls select {
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  min-width: 220px;
+  transition: 0.3s;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #555;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* LOADING / ERROR */
+.loading, .error {
+  text-align: center;
+  margin: 15px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+/* GRID */
+.countries-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.country-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.country-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* FLAG */
+.flag {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #eee;
+}
+
+/* TEXT */
+.country-card h3 {
+  margin-bottom: 8px;
+}
+
+.country-card p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* DARK MODE */
+body.dark {
+  background: linear-gradient(to right, #1e1e1e, #121212);
+  color: white;
+}
+
+body.dark .country-card {
+  background: rgba(30, 30, 30, 0.8);
+}
+
+body.dark input,
+body.dark select {
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Global Explorer</h1>
+    <p>Discover countries around the world</p>
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search by country or capital..."
+    >
+
+    <select id="regionFilter">
+      <option value="">All Regions</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+
+    <select id="sortOption">
+      <option value="">Sort By</option>
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      <option value="pop-asc">Population (Low to High)</option>
+      <option value="pop-desc">Population (High to Low)</option>
+    </select>
+
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading" class="loading hidden">
+    Loading countries...
+  </div>
+
+  <!-- ERROR -->
+  <div id="error" class="error hidden">
+    Failed to load data.
+  </div>
+
+  <!-- COUNTRIES -->
+  <div id="countriesContainer" class="countries-container"></div>
+
+  <!-- TEMPLATE -->
+  <template id="countryTemplate">
+    <div class="country-card">
+      <img class="flag" src="" alt="Flag">
+      <h3 class="name"></h3>
+      <p>Capital: <span class="capital"></span></p>
+      <p>Region: <span class="region"></span></p>
+      <p>Population: <span class="population"></span></p>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
