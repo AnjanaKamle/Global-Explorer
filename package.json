@@ -1,0 +1,20 @@
+{
+  "name": "global-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for the Global Explorer project.",
+  "main": "pages/index.html",
+  "scripts": {
+    "start": "npx http-server pages -p 8080",
+    "dev": "npm run start",
+    "build": "echo \"No build step configured. Serve the pages directory as static assets.\"",
+    "deploy": "echo \"Deploy by publishing the pages directory to your hosting provider.\""
+  },
+  "keywords": [
+    "static",
+    "website",
+    "global-explorer"
+  ],
+  "author": "",
+  "license": "MIT"
+}
